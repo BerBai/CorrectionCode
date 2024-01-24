@@ -1,5 +1,7 @@
 # Prerequisites
 *.d
+.idea
+CMakeLists.txt
 
 # Compiled Object files
 *.slo

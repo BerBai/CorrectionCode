@@ -1,0 +1,3 @@
+C:/Users/iaciac/CLionProjects/golaycode/cmake-build-debug/CMakeFiles/golaycode.dir
+C:/Users/iaciac/CLionProjects/golaycode/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/iaciac/CLionProjects/golaycode/cmake-build-debug/CMakeFiles/rebuild_cache.dir
