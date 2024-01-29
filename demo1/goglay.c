@@ -243,7 +243,11 @@ void golay_test(void)
         {
             trashed_codeword = virgin_codeword ^ error_mask; /* 引起位错误 */
 
-            printf("\n噪音(d)：");
+            printf("\n原信息(d)：");
+            print_binary(virgin_codeword);
+            printf("\n");
+
+            printf("含错位(d)：");
             print_binary(trashed_codeword);
             printf("\n");
 
