@@ -185,8 +185,7 @@ static unsigned char tal[] = { 0x8d, 0xef, 0xec, 0x86, 0xfa, 0x99, 0xaf, 0x7b };
  *  and Berlekamp's dual basis representation
  * (l0, l1, ...l7)
  */
-static void
-gen_ltab(void)
+static void gen_ltab(void)
 {
   int i,j,k;
 
@@ -205,8 +204,7 @@ gen_ltab(void)
 #if PRIM != 1
 static int Ldec;/* Decrement for aux location variable in Chien search */
 
-static void
-gen_ldec(void)
+static void gen_ldec(void)
 {
     for(Ldec=1;(Ldec % PRIM) != 0;Ldec+= NN)
         ;
@@ -646,8 +644,12 @@ static void init_rs(void) {
  * :indentSize=2:tabSize=8:noTabs=true:
  */
 
+
 void main() {
     system("chcp 65001");
+
+    printf("MM: %d, NN: %d, KK: %d\n", MM, NN, KK);
+
     clock_t start, end;
     start = clock();
     init_rs();

@@ -22,28 +22,34 @@ extern "C" {
 
 /* 若要选择CCSDS标准（255,223）码，请定义CCSDS。这意味着MM、KK、B0和PRIM的标准值。*/
 /* #undef CCSDS 1*/
-#undef CCSDS
+#undef CCSDS 0
 #ifndef CCSDS
 
 /* 否则，保持CCSDS未定义，并设置以下参数：
  *
  * 将MM设置为每个代码符号的位数。Reed-Solomon分组大小将是NN = 2**M - 1个符号。支持的值在rs.c中定义。
  */
-#define MM 8 /* 符号大小（位）*/
+//#define MM 8 /* 符号大小（位）*/
 
 /*
  * 将KK设置为每个块中的数据符号数，必须小于块大小。代码将能够纠正最多NN-KK个擦除或（NN-KK）/2个错误，
  * 或者二者的组合，每个错误计为两个擦除。
  */
-#define KK 207 /* 每个块中的数据符号数*/
+//#define KK 207 /* 每个块中的数据符号数*/
 
 /* 将B0设置为生成多项式的第一个根，以α形式表示，并将PRIM设置为用于生成生成多项式的根的α的幂。然后生成多项式将是
  * @**PRIM*B0, @**PRIM*(B0+1), @**PRIM*(B0+2)...@**PRIM*(B0+NN-KK)
  * “@”表示小写的α。
  */
+//#define B0 1 /* 生成多项式的第一个根，α形式*/
+//#define PRIM 1 /* 用于生成多项式的根的α的幂*/
+
+#define STANDARD_ORDER
+
+#define MM 8 /* 符号大小（位）*/
+#define KK 207 /* 每个块中的数据符号数*/
 #define B0 1 /* 生成多项式的第一个根，α形式*/
 #define PRIM 1 /* 用于生成多项式的根的α的幂*/
-#define STANDARD_ORDER
 
 /* 如果您想选择自己的域生成多项式，您必须在rs.c中编辑它。*/
 
